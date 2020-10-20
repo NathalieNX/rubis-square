@@ -19,11 +19,19 @@ const rootReducer = combineReducers({
 const initialState = {
   gameState: {
     game: {
+      // nbColor: 3,
+      // board: [
+      //   [0, 1, 2],
+      //   [0, 1, 2],
+      //   [0, 1, 2],
+      // ],
       nbColor: 3,
       board: [
-        [0, 1, 2],
-        [0, 1, 2],
-        [0, 1, 2],
+        [0, 1, 2, 1, 2],
+        [0, 1, 2, 1, 2],
+        [0, 1, 2, 1, 2],
+        [0, 1, 2, 1, 2],
+        [0, 1, 2, 1, 2],
       ],
     },
   },
@@ -33,8 +41,8 @@ const sagaMiddleware = createSagaMiddleware();
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const composeEnhancers =
   process.env.NODE_ENV !== 'production' &&
-  typeof window === 'object' &&
-  (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    typeof window === 'object' &&
+    (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
     ? (window as any).window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
     : compose;
 /* eslint-enable */
